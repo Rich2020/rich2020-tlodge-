@@ -1,0 +1,129 @@
+[
+    {
+        "id": "dd0fd0df.6dfcb",
+        "label": "new package",
+        "type": "tab"
+    },
+    {
+        "id": "60fef6f9.4f4df8",
+        "type": "osmonitor",
+        "z": "dd0fd0df.6dfcb",
+        "ptype": [],
+        "name": "",
+        "subtype": "freemem",
+        "x": 164.5,
+        "y": 360,
+        "wires": [
+            [
+                "fabf62e0.f9bd7"
+            ]
+        ]
+    },
+    {
+        "id": "1f9f1cc8.a5e393",
+        "type": "sensingkit",
+        "z": "dd0fd0df.6dfcb",
+        "ptype": {
+            "1f9f1cc8.a5e393": []
+        },
+        "name": "",
+        "subtype": "light",
+        "granularity": 10,
+        "x": 170,
+        "y": 218,
+        "wires": [
+            [
+                "6efe5d9d.781d84"
+            ]
+        ]
+    },
+    {
+        "id": "6efe5d9d.781d84",
+        "type": "chartify",
+        "z": "dd0fd0df.6dfcb",
+        "ptype": {
+            "": []
+        },
+        "name": "",
+        "title": "",
+        "chart": "gauge",
+        "xlabel": "",
+        "ylabel": "",
+        "min": "",
+        "max": "",
+        "labels": "",
+        "maxreadings": "",
+        "ticks": "",
+        "xtype": [
+            {
+                "source": "sensingkit",
+                "name": "value",
+                "type": "number"
+            }
+        ],
+        "ytype": [],
+        "subtype": "bar",
+        "previousinputs": {
+            "1f9f1cc8.a5e393": "light"
+        },
+        "x": 288.5,
+        "y": 216,
+        "wires": [
+            [
+                "edd6b07.240215"
+            ]
+        ]
+    },
+    {
+        "id": "fabf62e0.f9bd7",
+        "type": "chartify",
+        "z": "dd0fd0df.6dfcb",
+        "ptype": {},
+        "name": "",
+        "title": "",
+        "chart": "bar",
+        "xlabel": "",
+        "ylabel": "",
+        "min": "",
+        "max": "",
+        "labels": "",
+        "maxreadings": "",
+        "ticks": "",
+        "xtype": [
+            {
+                "source": "osmonitor",
+                "name": "ts",
+                "type": "time"
+            }
+        ],
+        "ytype": [
+            {
+                "source": "osmonitor",
+                "name": "value",
+                "type": "number"
+            }
+        ],
+        "subtype": "bar",
+        "previousinputs": {
+            "60fef6f9.4f4df8": "freemem"
+        },
+        "x": 284.5,
+        "y": 353,
+        "wires": [
+            [
+                "edd6b07.240215"
+            ]
+        ]
+    },
+    {
+        "id": "edd6b07.240215",
+        "type": "app",
+        "z": "dd0fd0df.6dfcb",
+        "name": "",
+        "appId": "webapp",
+        "layout": null,
+        "x": 449.5,
+        "y": 289,
+        "wires": []
+    }
+]
